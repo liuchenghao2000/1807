@@ -54,8 +54,15 @@ class Card_system():#系统类
 		if x.flag==0:
 			self.Tell_some='未找到'
 	def tell(self):					#行为说
-		print(self.Tell_some)		
-
+		print(self.Tell_some)	
+	def save_file(self)	
+		ff=open('Student_dirfile','w')
+		ff.write()
+	def read_file(self)
+		ff=open('Student_dirfile','r')
+		ff.read()
+	def cloose_file(self)
+		ff.cloose()
 class Menu():#菜单类
 	def __init__(self,menu):
 		self.m=menu
