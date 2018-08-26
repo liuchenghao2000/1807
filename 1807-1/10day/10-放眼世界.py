@@ -1,0 +1,10 @@
+list = ['海南','巴黎','东京','爱琴海','云南']
+print(list)
+list.reverse()
+print(list)
+list.reverse()
+print(list)
+list.sort()
+print(list)
+list.sort(reverse=True)
+print(list)
