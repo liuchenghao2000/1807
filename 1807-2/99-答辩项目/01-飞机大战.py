@@ -1,5 +1,7 @@
 import pygame
 from GameSprite import *
+
+
 class PlanMain():
     def __init__(self):
         self.screen = pygame.display.set_mode(SCREEN_RECT.size)
@@ -13,6 +15,7 @@ class PlanMain():
         self.enemy1_down_group = pygame.sprite.Group()
         self.count = 0
         self.score = 0 #计算分数的
+
     def __create_sprites(self): #创建敌机精灵组
         bg1 = Background()
         bg2 = Background(True)
@@ -42,6 +45,7 @@ class PlanMain():
             self.__update_sprites()
             # 5. 更新屏幕显示
             pygame.display.update()
+
     def __event_handler(self):
         """事件监听"""
         for event in pygame.event.get():
@@ -54,6 +58,7 @@ class PlanMain():
             # 监听子弹
             elif event.type == CREATE_BULLET_EVENT:
                 self.hero.fire()
+
         keys_pressed = pygame.key.get_pressed()
         if keys_pressed[pygame.K_RIGHT]:
             self.hero.speed = 5
@@ -81,12 +86,13 @@ class PlanMain():
             self.hero.kill()
             # 结束游戏
             PlaneGame.__game_over()
+
     def __update_sprites(self):
 
         """更新精灵组"""
         self.back_group.update()
         self.back_group.draw(self.screen)
-        self.enemy_group.update()
+        self.enemy_group.update() 
         self.enemy_group.draw(self.screen)
         self.hero_group.update()
         self.hero_group.draw(self.screen)
@@ -104,6 +110,7 @@ class PlanMain():
                     self.score +=5
                     enemy1_down_group.remove(enemy1_down)
                     print(self.score)
+
     def __create_sprites(self):
         '''创建精灵组'''
         # 创建背景精灵和精灵组
@@ -113,6 +120,7 @@ class PlanMain():
         # 英雄组
         self.hero = Hero()
         self.hero_group = pygame.sprite.Group(self.hero)
+
     @staticmethod
     def __game_over():
         """游戏结束"""

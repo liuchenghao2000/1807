@@ -1,12 +1,13 @@
+import pygame
+from pygame.locals import *
+from sys import exit
 
 # 背景图以及移动小车图
 highway_image_name = "highway.jpg"
 car_image_name = "car.png"
 
 # 导入程序相关的模块
-import pygame
-from pygame.locals import *
-from sys import exit
+
 
 pygame.init()
 
